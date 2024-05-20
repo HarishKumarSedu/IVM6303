@@ -1,6 +1,7 @@
 
 class FRO_TRM:
     def __init__(self) -> None:
+        print(FRO_TRM)
         pass
     def FRO_TRM_testSetup(self):
         pass 
@@ -8,4 +9,4 @@ class FRO_TRM:
         pass
     def FRO_TRM_evaluation(self,limits:dict):
         return None           
-                                    
+                                

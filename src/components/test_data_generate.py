@@ -23,12 +23,12 @@ class TestDataGenerate:
         data_root_file = os.path.join(self.data_ingestion.root_dir, self.data_ingestion.local_filename)
         sheetnames =  openpyxl.load_workbook(data_root_file).sheetnames
         config = {}
+        test_pages = {}
         for sheet in sheetnames:
             data = pd.read_excel(data_root_file,sheet_name=sheet)
             dataset = {}
             sheet = re.sub('[!-\/:-@[-`{-~\s]','_', sheet) 
             tests = []
-            print(data.columns[1:])
             for column in data.columns[1:]:
                 tests.append(re.sub('[!-\/:-@[-`{-~\s]','_',data[column][2]))
                 dataset.update(
@@ -51,7 +51,11 @@ class TestDataGenerate:
             config.update({
                 sheet:tests
             })
-            with open(os.path.join(self.test_data_generate.root_dir, self.test_data_generate.test_data_filename),'w') as file:
-                json.dump(dataset, file)
+
+            test_pages.update({sheet : dataset})
+        with open(os.path.join(self.test_data_generate.root_dir, self.test_data_generate.test_data_filename),'w') as file:
+            json.dump(test_pages, file)
+            log.info(f'test data generated')
         with open( os.path.join(os.path.join(self.test_data_generate.root_dir, self.test_data_generate.test_cofig_filename)),'w') as file:
             yaml.dump({"TestBench":config}, file)
+            log.info(f'test sonfiguration file generated')

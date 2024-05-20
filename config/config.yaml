@@ -9,3 +9,6 @@ test_data_generate:
   root_dir: artifacts/test_data_generate
   test_cofig_filename: test_config.yaml
   test_data_filename: test_data.json
+
+test_bench:
+  root_dir: src/TestBench

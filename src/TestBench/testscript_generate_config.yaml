@@ -1,0 +1,4 @@
+TestBench:
+  PGM_production_self_consistent:
+  - VBG_TRM_1_2V_REF
+  - FRO_TRM

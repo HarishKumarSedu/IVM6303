@@ -1,0 +1,4 @@
+[[10:11:48] : INFO : main : Hi]
+[[10:12:06] : INFO : main : Hi]
+[[10:12:06] : WARNING : main : Hi]
+[[10:12:06] : ERROR : main : Hi]

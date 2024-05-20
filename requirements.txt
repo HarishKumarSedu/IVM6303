@@ -1,0 +1,7 @@
+setuptools 
+rich 
+pandas 
+pyYAML
+openpyxl
+dvc 
+dvc_gdrive

@@ -10,3 +10,5 @@ stages:
     deps:
     - src/components/test_data_generate.py
     - artifacts/
+    # outs:
+    # - artifacts/test_data

@@ -17,9 +17,9 @@ stages:
     deps:
     - path: artifacts/
       hash: md5
-      md5: a1622bb7bed118e77145ad04c8f33be9.dir
-      size: 13834
-      nfiles: 4
+      md5: e0f21b2358f78df16138b4d1077663e6.dir
+      size: 13721
+      nfiles: 3
     - path: src/components/test_data_generate.py
       hash: md5
       md5: 151a20457d678502d0f77085dc409331

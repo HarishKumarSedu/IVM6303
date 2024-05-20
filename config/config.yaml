@@ -1,5 +1,11 @@
-TestBench:
-  PGM_production_self_consistent:
-  - VBG_TRM_1_2V_REF
-  - FRO_TRM
-  - FRO_TRM_dummy
+artifacts:
+
+data_ingestion:
+  root_dir: artifacts/data_ingestion
+  URL: https://github.com/HarishKumarSedu/IVM6303/blob/master/src/raw_data/IVM6303_ATE_Test_Plan_Rev1.xlsx?raw=true
+  local_filename : IVM6303_ATE_Test_Plan_Rev1.xlsx
+
+test_data_generate:
+  root_dir: artifacts/test_data_generate
+  test_cofig_filename: test_config.yaml
+  test_data_filename: test_data.json

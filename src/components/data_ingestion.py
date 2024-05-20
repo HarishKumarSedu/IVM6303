@@ -3,25 +3,33 @@ import urllib.request as request
 import requests
 import zipfile
 from src import log
-
+from src.constants import CONFIG_FILE_PATH
+from src.utils.common import read_yaml
 
 
 class DataIngestion:
-    def __init__(self):
-        # self.config = config
-        pass
+    def __init__(self, config_filepath= CONFIG_FILE_PATH):
+        self.data_ingestion = read_yaml(config_filepath).data_ingestion
+        #check the the data ingestion directory
+        if not os.path.exists(self.data_ingestion.root_dir) :
+            os.makedirs(self.data_ingestion.root_dir)
+            log.info('data_ingestion directory created under the aritifacts')
 
 
     
     def download_file(self):
         # if not os.path.exists(self.config.local_data_file):
             response =  requests.get(
-                url = 'https://github.com/HarishKumarSedu/IVM6303/blob/master/src/raw_data/IVM6303_ATE_Test_Plan_Rev1.xlsx?raw=true',
+                url = self.data_ingestion.URL,
             )
             if response.status_code  == 200:
-                log.info('fetch pass')
-                with open('artifacts/IVM6303_ATE_Test_Plan_Rev1.xlsx','wb') as file:
+                
+                with open(os.path.join(self.data_ingestion.root_dir,self.data_ingestion.local_filename),'wb') as file:
                     file.write(response.content)
+                    log.info(f' data file name downloaded with name of {self.data_ingestion.local_filename}')
+            else:
+                    log.error(f' Failed to download the data ....! {self.data_ingestion.root_dir}')
+                
         # else:
         #     log.info(f"File already exists ")
 

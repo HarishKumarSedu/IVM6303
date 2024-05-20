@@ -1,3 +1,12 @@
-stages: 
-  - pipe 
-  
+stages:
+  data_ingestion:
+    cmd: python src/components/data_ingestion.py
+    deps:
+    - src/components/data_ingestion.py
+    outs:
+    - artifacts/IVM6303_ATE_Test_Plan_Rev1.xlsx
+  test_data_generate:
+    cmd: python src/components/test_data_generate.py 
+    deps:
+    - src/components/test_data_generate.py
+    - artifacts/

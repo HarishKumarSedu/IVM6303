@@ -1,0 +1,26 @@
+schema: '2.0'
+stages:
+  data_ingestion:
+    cmd: python src/components/data_ingestion.py
+    deps:
+    - path: src/components/data_ingestion.py
+      hash: md5
+      md5: c51879c0e8096fd64477b48ea7b02264
+      size: 1269
+    outs:
+    - path: artifacts/IVM6303_ATE_Test_Plan_Rev1.xlsx
+      hash: md5
+      md5: 901a0d884f94a2fff1c663ea720889fc
+      size: 12373
+  test_data_generate:
+    cmd: python src/components/test_data_generate.py
+    deps:
+    - path: artifacts/
+      hash: md5
+      md5: a1622bb7bed118e77145ad04c8f33be9.dir
+      size: 13834
+      nfiles: 4
+    - path: src/components/test_data_generate.py
+      hash: md5
+      md5: 151a20457d678502d0f77085dc409331
+      size: 1521

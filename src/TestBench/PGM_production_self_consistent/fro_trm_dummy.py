@@ -1,7 +1,7 @@
 
 class FRO_TRM_dummy:
     def __init__(self) -> None:
-        print(FRO_TRM_dummy)
+        print("FRO_TRM_dummy")
         pass
     def FRO_TRM_dummy_testSetup(self):
         pass 

@@ -1,7 +1,7 @@
 
 class VBG_TRM_1_2V_REF:
     def __init__(self) -> None:
-        print(VBG_TRM_1_2V_REF)
+        print("VBG_TRM_1_2V_REF")
         pass
     def VBG_TRM_1_2V_REF_testSetup(self):
         pass 

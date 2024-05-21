@@ -32,14 +32,14 @@ class TestCreate:
                         log.info(f'Page {page} directory created')
                     #if the directory exists create the test scripts 
                     for test_name in tests.get(page):
-                        test_scripts_name = os.path.join(page_dir, f'{test_name.lower()}.py')
+                        test_scripts_name = os.path.join(page_dir, f'{test_name}.py')
                         if not(os.path.exists(test_scripts_name)):
                             with open(test_scripts_name, 'w') as file:
                                 log.info(f'{test_name}.py script created...!')
                                 test_string = f'''
 class {test_name}:
     def __init__(self) -> None:
-        print({test_name})
+        print("{test_name}")
         pass
     def {test_name}_testSetup(self):
         pass 
